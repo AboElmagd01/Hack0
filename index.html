@@ -11,11 +11,11 @@
     <a-assets>
         <img id="card" src="markers/Chlorine-A.png" />
         <a-asset-item  id="chlorine" src="WasserstoffAtom.gltf"></a-asset-item>
-        <img id="card1" src="markers/Sodium-A.png" />
+        <img id="card1" src="markers/hydrogen-A.png" />
         <a-asset-item  id="hydro" src="hydrogen.gltf"></a-asset-item>
-        <img id="card2" src="markers/TableSalt-A.png" />
+        <img id="card2" src="markers/Sodium-A.png" />
         <a-asset-item  id="ox" src="NA.gltf"></a-asset-item>
-        <img id="card3" src="markers/TableSalt-A.png" />
+        <img id="card3" src="markers/Sodium-A.png" />
         <a-asset-item  id="sod" src="NA.gltf"></a-asset-item>
     </a-assets>
 
@@ -26,18 +26,18 @@
         <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#chlorine" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
     </a-entity>
     <a-entity mindar-image-target="targetIndex: 1">
-        <a-plane src="#card1" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-plane src="#card1" position="0 0 0" height="1.5" width="1.1" rotation="0 0 0"></a-plane>
         <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#hydro" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
     </a-entity>
 <!--    <div style="display: none;">-->
 <!--        -->
 <!--    </div>-->
     <a-entity mindar-image-target="targetIndex: 2">
-        <a-plane src="#card2" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-plane src="#card2" position="0 0 0" height="1.5" width="1.1" rotation="0 0 0"></a-plane>
         <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#ox" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
     </a-entity>
     <a-entity mindar-image-target="targetIndex: 3">
-        <a-plane src="#card2" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-plane src="#card3" position="0 0 0" height="1.5" width="1.1" rotation="0 0 0"></a-plane>
         <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#sod" animation="property: rotation; to: 0 360 0; loop: true; dur: 1500">
     </a-entity>
 </a-scene>
