@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>edu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+</head>
+<body>
+<a-scene mindar-image="imageTargetSrc: targets(4).mind;filterMinCF:0.00001; filterBeta: 0.01;; maxTrack: 2" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-assets>
+        <img id="card" src="markers/Chlorine-A.png" />
+        <a-asset-item  id="chlorine" src="WasserstoffAtom.gltf"></a-asset-item>
+        <img id="card1" src="markers/Sodium-A.png" />
+        <a-asset-item  id="hydro" src="hydrogen.gltf"></a-asset-item>
+        <img id="card2" src="markers/TableSalt-A.png" />
+        <a-asset-item  id="ox" src="NA.gltf"></a-asset-item>
+        <img id="card3" src="markers/TableSalt-A.png" />
+        <a-asset-item  id="sod" src="NA.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <a-entity id="ffd" mindar-image-target="targetIndex: 0">
+        <a-plane src="#card" position="0 0 0" height="1.5" width="1.5" rotation="0 0 0"></a-plane>
+        <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#chlorine" animation="property: rotation; to: 0 360 0; loop: true; dur: 1500">
+    </a-entity>
+    <a-entity mindar-image-target="targetIndex: 1">
+        <a-plane src="#card1" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#hydro" animation="property: rotation; to: 0 360 0; loop: true; dur: 1500">
+    </a-entity>
+<!--    <div style="display: none;">-->
+<!--        -->
+<!--    </div>-->
+    <a-entity mindar-image-target="targetIndex: 2">
+        <a-plane src="#card2" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#ox" animation="property: rotation; to: 0 360 0; loop: true; dur: 1500">
+    </a-entity>
+    <a-entity mindar-image-target="targetIndex: 3">
+        <a-plane src="#card2" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#sod" animation="property: rotation; to: 0 360 0; loop: true; dur: 1500">
+    </a-entity>
+</a-scene>
+<!--<script>-->
+<!--    let exampleTarget = document.querySelector('#ffd');-->
+<!--    exampleTarget.addEventListener("targetFound", event => {-->
+<!--        console.log("target found");-->
+<!--    });-->
+
+<!--    // detect target lost-->
+<!--    exampleTarget.addEventListener("targetLost", event => {-->
+<!--        console.log("target lost");-->
+<!--    });-->
+<!--</script>-->
+</body>
+</html>
