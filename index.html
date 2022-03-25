@@ -17,6 +17,7 @@
         <a-asset-item  id="ox" src="NA.gltf"></a-asset-item>
         <img id="card3" src="markers/Sodium-A.png" />
         <a-asset-item  id="sod" src="NA.gltf"></a-asset-item>
+        <a-asset-item id="trigger" src="hydrogen.gltf"></a-asset-item>
     </a-assets>
 
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -40,12 +41,12 @@
         <a-plane src="#card3" position="0 0 0" height="1.5" width="1.1" rotation="0 0 0"></a-plane>
         <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#sod" animation="property: rotation; to: 0 360 0; loop: true; dur: 1500">
     </a-entity>
+    <a-entity visible="false" id="temp">
+        <a-plane src="#card2" position="0 0 0" height="1.5" width="1.1" rotation="0 0 0"></a-plane>
+        <a-gltf-model  position="0 0 0.5" scale="0.5 0.5 0.5" src="#hydro" animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+    </a-entity>
 </a-scene>
 <!--<script>-->
-<!--    let exampleTarget = document.querySelector('#ffd');-->
-<!--    exampleTarget.addEventListener("targetFound", event => {-->
-<!--        console.log("target found");-->
-<!--    });-->
 
 <!--    // detect target lost-->
 <!--    exampleTarget.addEventListener("targetLost", event => {-->
@@ -53,4 +54,15 @@
 <!--    });-->
 <!--</script>-->
 </body>
+<script>
+    const sceneEl = document.querySelector('a-scene');
+    let temp = sceneEl.querySelector('#temp');
+    let source = sceneEl.querySelector('#ffd');
+    source.addEventListener("targetFound", event => {
+        console.log("target found");
+        temp.setAttribute('visible', 'true');
+        source.setAttribute('visible', 'false');
+    });
+
+</script>
 </html>
